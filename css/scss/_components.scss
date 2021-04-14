@@ -29,21 +29,23 @@
     & .eye-left {
         position: absolute;
         background: #fff;
-        width: 60px;
-        height: 60px;
+        width: 65px;
+        height: 65px;
         top: 50%;
-        left: 32%;
-        transform: translate(-50%, -50%) rotate(45deg);
+        left: 35%;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
     }
 
     & .eye-right {
         position: absolute;
         background: #fff;
-        width: 60px;
-        height: 60px;
+        width: 65px;
+        height: 65px;
         top: 50%;
-        left: 67%;
-        transform: translate(-50%, -50%) rotate(45deg);
+        left: 65%;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
     }
     
     & .ball {
@@ -51,10 +53,11 @@
         background: #000;
         width: 25px;
         height: 25px;
-        border-radius: 15%;
+        border-radius: 50%;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        transition: all 0.5s ease-out;
     }
 }
 
@@ -87,7 +90,17 @@
         right: -1%;
         transform: rotate(45deg);
     }
-} 
+}
+
+.fire:hover ~ .eyes {
+
+    & .eye-left .ball {
+        background: #e62709;
+    }
+    & .eye-right .ball {
+        background: #e62709;
+    }
+}
 
 .fire {
     position: absolute;
