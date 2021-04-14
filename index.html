@@ -9,18 +9,63 @@
 <body>
 
   <section id="home">
+
+    <!-- LOGO START -->
     <div class="home-logo">
-      <div class="triangle-down"></div>
-      <div class="triangle-left"></div>
-      <div class="triangle-right"></div>
-      <div class="eye-right">
-        <div class="pupil-right"></div>
+      <div class="head"></div>
+      <div class="eyes">
+        <div class="eye-left">
+          <div class="ball"></div>
+        </div>
+        <div class="eye-right">
+          <div class="ball"></div>
+        </div>
       </div>
-      <div class="eye-left">
-        <div class="pupil-left"></div>
+      <div class="horns">
+        <div class="horn-left"></div>
+        <div class="horn-right"></div>
+      </div>
+
+      <div class="fire">
+        <div class="fire-left">
+          <div class="main-fire"></div>
+          <div class="particle-fire"></div>
+        </div>
+        <div class="fire-main">
+          <div class="main-fire"></div>
+          <div class="particle-fire"></div>
+        </div>
+        <div class="fire-right">
+          <div class="main-fire"></div>
+          <div class="particle-fire"></div>
+        </div>
+        <div class="fire-bottom">
+          <div class="main-fire"></div>
+        </div>
       </div>
     </div>
+    <!-- // LOGO END -->
+
   </section>
+
+  
+<script>
+  var balls = document.getElementsByClassName("ball");
+  document.onmousemove = function(){
+    var x = event.clientX * 100 / window.innerWidth + "%";
+    var y = event.clientY * 100 / window.innerHeight + "%";
+    //event.clientX => get the horizontal coordinate of the mouse
+    //event.clientY => get the Vertical coordinate of the mouse
+    //window.innerWidth => get the browser width
+    //window.innerHeight => get the browser height
+
+    for(var i=0;i<2;i++){
+      balls[i].style.left = x;
+      balls[i].style.top = y;
+      balls[i].style.transform = "translate(-"+x+",-"+y+")";
+    }
+  }
+</script>
 
 </body>
 </html>
